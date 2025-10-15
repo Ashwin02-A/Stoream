@@ -1,0 +1,665 @@
+/* HomePageStyle.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --hp-baseColor: #4a5568;
+  --hp-baseSize: 16px;
+  --hp-baseLineHeight: 1.5;
+  --hp-fontFamily: Inter, sans-serif;
+  --hp-indigo: #4338ca;
+  --hp-violet: #9333ea;
+  --hp-gradient-bg: linear-gradient(135deg, #5691f9 0%, #21488c 100%);
+  --hp-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hp-homepage {
+  background: var(--hp-gradient-bg);
+  color: #fff;
+  font-family: var(--hp-fontFamily);
+}
+
+/* Header */
+.hp-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0;
+  z-index: 1000;
+}
+
+.hp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hp-brand-name h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, #a3bffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.ms-auto.d-flex {
+  gap: 15px;
+}
+
+.hp-animated-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hp-animated-btn i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.hp-animated-btn:hover i {
+  transform: translateX(4px);
+}
+
+.hp-animated-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.hp-animated-btn:hover::after {
+  width: 100%;
+}
+
+/* Main Content */
+.hp-main-content {
+  padding: 4rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px; /* Offset for fixed header */
+}
+
+/* Get Started Section */
+.hp-get-started {
+  background-color: linear-gradient(135deg, #4dffe7 0%, #004049 100%);
+
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--hp-card-shadow);
+  animation: hpFadeIn 1s ease-in-out;
+  margin-bottom: 4rem;
+}
+
+.hp-get-started h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #01286b 0%, #246eee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hp-get-started p {
+  font-size: 1.2rem;
+  color: #e2e8f0;
+}
+
+.hp-input-group {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hp-form-control {
+  border-radius: 50px 0 0 50px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.hp-btn-danger {
+  border-radius: 0 50px 50px 0;
+  padding: 12px 20px;
+  background: #e53e3e;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.hp-btn-danger:hover {
+  transform: scale(1.05);
+  background: #c53030;
+}
+
+/* Movie Popup */
+.hp-movie-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.hp-popup-content {
+  background: linear-gradient(90deg, rgba(183,249,255,1) 0%, rgba(7,74,178,1) 51%, rgba(4,2,42,1) 100%);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: var(--hp-card-shadow);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.hp-close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #4a5568;
+}
+
+.hp-close-btn:hover {
+  color: #e53e3e;
+}
+
+#movieDetails, #relatedMovies, #movieCategories {
+  margin-top: 15px;
+}
+
+#movieDetails img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.hp-related-movie, .hp-category-item {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #edf2f7;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #4a5568;
+}
+
+.hp-related-movie:hover, .hp-category-item:hover {
+  background-color: #e2e8f0;
+}
+
+/* Top Movies Section */
+.hp-top-movies-section {
+  background: linear-gradient(180deg, #153875, #1f069c4b);
+  padding: 5rem 0;
+  border-radius: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hp-top-movies-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hp-movie-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hp-movie-poster {
+  position: relative;
+  width: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hp-movie-poster:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hp-movie-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.hp-movie-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.hp-movie-poster:hover .hp-movie-poster-img {
+  transform: scale(1.15);
+}
+
+.hp-movie-ranking {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f6ad55;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.hp-movie-overlay {
+  content: "";
+  height: 100px;
+  position: absolute;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #2d3748);
+  width: 100%;
+  z-index: 2;
+}
+
+.hp-movie-poster:hover .hp-movie-overlay {
+  transform: translateY(0);
+}
+
+.hp-movie-details {
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
+  background: rgba(45, 55, 72, 0.9);
+  padding: 15px;
+  border-radius: 0 0 15px 15px;
+  color: #fff;
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+  z-index: 5;
+  opacity: 0;
+}
+
+.hp-movie-poster:hover .hp-movie-details {
+  bottom: 0;
+  opacity: 1;
+}
+
+.hp-movie-description {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.hp-movie-genre, .hp-movie-rating {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  margin-bottom: 8px;
+}
+
+.hp-movie-rating.rating {
+  color: #f6ad55;
+  font-weight: bold;
+}
+
+.hp-trailer-button {
+  width: 100%;
+  padding: 8px;
+  background: #4a90e2;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hp-trailer-button:hover {
+  background: #357abd;
+}
+
+/* Trailer Modal */
+.hp-trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.hp-trailer-content {
+  position: relative;
+  padding: 20px;
+  background: #000;
+  border-radius: 15px;
+  box-shadow: var(--hp-card-shadow);
+}
+
+.hp-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hp-close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Plans Section */
+.hp-homecont {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.8));
+  padding: 4rem 0;
+}
+
+.hp-plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hp-plans-hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hp-plans-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #fff, #a0aec0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hp-plans-hero-subtitle {
+  font-size: 1.2rem;
+  color: #e2e8f0;
+}
+
+.hp-plan-item-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.hp-plan-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.hp-plan-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--hp-card-shadow);
+}
+
+.hp-plan-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.hp-plan-item:hover::before {
+  opacity: 1;
+}
+
+.hp-plan1 { background: linear-gradient(45deg, #48bb78, #2d884d); }
+.hp-plan2 { background: linear-gradient(45deg, #63b3ed, #3182ce); }
+.hp-plan3 { background: linear-gradient(45deg, #d53f8c, #9f1853); }
+
+.hp-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.hp-card-detail {
+  text-align: center;
+}
+
+.hp-card-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.hp-card-label {
+  background: #f6ad55;
+  color: #2d3748;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.hp-card-desc {
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+.hp-price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  color: #fff;
+}
+
+.hp-price span {
+  font-size: 1rem;
+  color: #a0aec0;
+}
+
+.hp-feature-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.hp-feature-list li {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  color: #e2e8f0;
+}
+
+.hp-feature-list .bi-check {
+  color: #48bb78;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.hp-feature-list .bi-x {
+  color: #e53e3e;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.hp-plan-button-link {
+  display: block;
+  text-decoration: none;
+}
+
+.hp-button {
+  width: 100%;
+  padding: 12px;
+  background: #f6ad55;
+  color: #2d3748;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.hp-button:hover {
+  background: #ed8936;
+  transform: scale(1.05);
+}
+
+.hp-button-pink { background: #d53f8c; }
+.hp-button-pink:hover { background: #b83280; }
+.hp-button-white { background: #fff; color: #2d3748; }
+.hp-button-white:hover { background: #f7fafc; }
+
+/* Footer */
+.hp-netflix-footer {
+  background: rgba(17, 24, 39, 0.9);
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hp-netflix-footer p {
+  font-size: 0.9rem;
+  color: #a0aec0;
+  margin-bottom: 1rem;
+}
+
+.hp-list-unstyled {
+  list-style: none;
+  padding: 0;
+}
+
+.hp-list-unstyled li {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hp-list-unstyled li:hover {
+  color: #a0aec0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.col {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Animations */
+@keyframes hpFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hp-header { padding: 0.3rem 0; }
+  .hp-brand-name h1 { font-size: 1.2rem; letter-spacing: 1px; }
+  .hp-animated-btn { padding: 6px 12px; font-size: 0.8rem; }
+  .hp-animated-btn i { font-size: 0.9rem; }
+
+  .hp-get-started h2 { font-size: 2rem; }
+  .hp-get-started { padding: 2rem; margin-bottom: 3rem; }
+
+  .hp-top-movies-heading { font-size: 1.5rem; }
+  .hp-movie-poster { width: 180px; }
+  .hp-movie-showcase { gap: 15px; }
+
+  .hp-plans-hero-title { font-size: 2rem; }
+  .hp-plan-item { padding: 1.5rem 1rem; }
+  .hp-price { font-size: 1.5rem; }
+  .hp-card-header h2 { font-size: 1.2rem; }
+
+  .hp-netflix-footer .row { flex-direction: column; align-items: center; }
+  .col { min-width: auto; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hp-header { padding: 0.2rem 0; }
+  .hp-brand-name h1 { font-size: 1rem; }
+  .hp-animated-btn { padding: 5px 10px; font-size: 0.7rem; }
+  .hp-animated-btn i { font-size: 0.8rem; }
+
+  .hp-get-started { padding: 1.5rem; }
+  .hp-get-started h2 { font-size: 1.5rem; }
+  .hp-get-started p { font-size: 1rem; }
+
+  .hp-movie-poster { width: 150px; }
+  .hp-movie-showcase { gap: 10px; }
+  .hp-movie-description, .hp-movie-genre, .hp-movie-rating { font-size: 0.7rem; }
+  .hp-trailer-button { font-size: 0.7rem; padding: 6px; }
+
+  .hp-plans-hero-title { font-size: 1.5rem; }
+  .hp-plan-item { padding: 1rem; }
+  .hp-price { font-size: 1.25rem; }
+  .hp-card-header h2 { font-size: 1rem; }
+
+  .hp-netflix-footer p { font-size: 0.8rem; }
+  .hp-list-unstyled li { font-size: 0.8rem; }
+}

@@ -1,0 +1,147 @@
+/* Scoped styles for Movie App page only */
+.movie-app-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #87CEEB 0%, #1E90FF 100%);
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .movie-app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: movie-app-header-pulse 3s infinite alternate;
+  }
+  
+  @keyframes movie-app-header-pulse {
+    0% { box-shadow: 0 0 0 rgba(135, 206, 235, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(135, 206, 235, 0.8); }
+  }
+  
+  .movie-app-title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-app-title:hover {
+    transform: scale(1.1);
+  }
+  
+  .movie-app-add-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #FF4500, #FF6347);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie-app-add-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+  }
+  
+  .movie-app-add-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+  
+  .movie-app-add-btn:hover::before {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .movie-app-main {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    animation: movie-app-main-fade 2s infinite alternate;
+  }
+  
+  @keyframes movie-app-main-fade {
+    0% { opacity: 0.9; }
+    100% { opacity: 1; }
+  }
+  
+  .movie-app-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  .movie-app-table th,
+  .movie-app-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+  }
+  
+  .movie-app-table th {
+    background: linear-gradient(90deg, #1E90FF, #87CEEB);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .movie-app-table tr:hover {
+    background: rgba(255, 69, 0, 0.1);
+    transform: scale(1.02);
+  }
+  
+  .movie-app-table img {
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-app-table img:hover {
+    transform: scale(1.1);
+  }
+  
+  .movie-app-table a {
+    color: #00CED1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .movie-app-table a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700;
+  }
+  
+  .movie-app-table .btn {
+    margin: 0 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .movie-app-table .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }

@@ -1,0 +1,156 @@
+/* src/index.css or another global CSS file */
+
+
+.img-fluid
+{
+    background-image: url('../images/Stoream.png'); /* Path from the public folder */
+    /* background-size: cover;
+    background-position: center; */
+    /* height: 50px;  Adjust to fit your header's height 
+    width: auto; Maintain aspect ratio 
+    max-width: 100%;  Ensures responsiveness 
+    display: flex;
+    flex-direction: column; */
+    width: 300px; /* Adjust the width of your logo image */
+    height: 80px;
+}
+
+
+
+.main-img
+{
+    background-image: url('../images/netflixmainbg.png'); /* Path from the public folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.netflix-background {
+    background-image: url('../images/netflixbg.jpg'); /* Path from the public folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.netflix-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.netflix-header {
+    background-color: #e50914;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.header-buttons .btn {
+    margin-left: 1rem;
+}
+
+.netflix-content {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+.netflix-footer {
+    background-color: #222;
+    padding: 1rem;
+    color: #fff;
+}
+.maintxt
+{
+    background-color: brown;
+    width: auto;
+    
+}
+.navbar {
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        
+}
+
+
+/* Gradient Background */
+.gradient-bg {
+    background: linear-gradient(135deg, #2e3192, #1bffff);
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Form Card */
+  .custom-form {
+    max-width: 400px;
+    margin: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+  
+  /* Labels */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  /* Input Fields */
+  .input-style {
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .input-style:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Button Design */
+  .custom-btn {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: white;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .custom-btn:hover {
+    background: linear-gradient(90deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 72, 72, 0.5);
+  }
+  
+  .custom-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(255, 72, 72, 0.5);
+  }
+  
+  /* Shadow Effect */
+  .shadow-lg {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+  

@@ -1,0 +1,85 @@
+/* Container for the Login page */
+.login-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  /* Left Image Section */
+  .login-image-section {
+    flex: 1;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-image {
+    background-image: url(../images/netflixlogin.png);
+    border-image-repeat: none;
+    background-repeat: no-repeat;
+    display: inherit;
+    border-image-width: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Right Form Section */
+  .login-form-section {
+    flex: 1;
+    background-color: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  /* Wrapper for the form */
+  .login-form-wrapper {
+    width: 80%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Input Fields */
+  .login-input {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .login-input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #e50914;
+  }
+  
+  /* Buttons and Links */
+  .btn-danger {
+    background-color: #e50914;
+    border: none;
+    font-weight: bold;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #f40612;
+    transform: scale(1.02);
+  }
+  
+  .text-danger {
+    color: #e50914 !important;
+  }
+  
+  .text-danger:hover {
+    text-decoration: underline;
+  }
+  
